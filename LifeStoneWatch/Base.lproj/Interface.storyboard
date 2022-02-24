@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nBt-bb-5He">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="ASDF" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="LifeStoneWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="LifeStoneWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="vrF-5S-dOm">
+            <objects>
+                <notificationController id="82s-Sc-4c3">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="lj9-Bt-qCm"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="YuK-cX-VWa"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="lj9-Bt-qCm" id="yTO-bk-jh7"/>
+                        <segue destination="Up4-pD-Gdb" kind="relationship" relationship="dynamicNotificationInterface" id="YNK-c3-hhD"/>
+                        <segue destination="htg-5x-68L" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="zJP-KY-f3D"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="-50" y="1344"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="k40-OU-zUb">
+            <objects>
+                <controller id="Up4-pD-Gdb" customClass="NotificationController" customModule="LifeStoneWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="1344"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="5gj-oA-EtH">
+            <objects>
+                <controller id="htg-5x-68L" customClass="NotificationController" customModule="LifeStoneWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="1051"/>
+        </scene>
+        <!--HealthController-->
+        <scene sceneID="adZ-dy-b10">
+            <objects>
+                <controller identifier="HealthController" hidesWhenLoading="NO" id="rdd-C6-At6" customClass="HealthController" customModule="LifeStoneWatch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="1Px-hu-dyf">
+                            <items>
+                                <imageView alignment="left" image="heart" id="uuW-RW-aR3"/>
+                                <group width="1" alignment="left" id="Xdu-Ml-T21">
+                                    <items>
+                                        <label alignment="left" text="---" textAlignment="left" minimumScaleFactor="0.29999999999999999" id="nZN-g2-UVJ">
+                                            <fontDescription key="font" type="system" pointSize="40"/>
+                                        </label>
+                                        <label alignment="left" text="BPM" id="pTh-Ki-hDK">
+                                            <color key="textColor" red="0.86132884030000001" green="0.058584794400000001" blue="0.11313973369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Start" id="SiZ-ec-OX1">
+                            <connections>
+                                <action selector="fetchBtnTapped" destination="rdd-C6-At6" id="iT2-Zg-v6p"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="label" destination="nZN-g2-UVJ" id="2hn-Te-2BD"/>
+                        <outlet property="startBtn" destination="SiZ-ec-OX1" id="UGu-y1-aUV"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-404" y="976"/>
+        </scene>
+        <!--MotionActivityController-->
+        <scene sceneID="gy6-Y3-IID">
+            <objects>
+                <controller identifier="MotionActivityController" id="RoG-sb-9mu" customClass="MotionActivityController" customModule="LifeStoneWatch" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="Current Activity Is:" textAlignment="left" numberOfLines="0" id="kX8-QO-EsZ">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
+                        <label width="1" alignment="left" text="Value" textAlignment="center" numberOfLines="0" id="eBg-fn-ZNU">
+                            <fontDescription key="font" type="system" pointSize="16"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="activityLabel" destination="eBg-fn-ZNU" id="hZC-QM-JcX"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-1114" y="976"/>
+        </scene>
+        <!--PedometerController-->
+        <scene sceneID="Fyw-8h-cqu">
+            <objects>
+                <controller identifier="PedometerController" id="bhN-MR-RSF" customClass="PedometerController" customModule="LifeStoneWatch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="Vxl-gQ-HGs">
+                            <items>
+                                <label alignment="left" text="Step" id="nI7-nm-Ffx">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="RiU-HH-mmQ"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="7kJ-bK-UgY">
+                            <items>
+                                <label alignment="left" text="Distance" id="g7M-BL-1i9">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="uBx-2n-T0y"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="LPN-hT-ae3">
+                            <items>
+                                <label alignment="left" text="Asend" id="O2w-FM-ouv">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="4Yt-ee-ekk"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="GCI-rA-zwB">
+                            <items>
+                                <label alignment="left" text="Pace" id="xd1-kK-erO">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="0E8-Hf-tga"/>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="1" right="1" top="0.0" bottom="0.0"/>
+                    <connections>
+                        <outlet property="asendLabel" destination="4Yt-ee-ekk" id="v6d-zW-Z5t"/>
+                        <outlet property="distanceLabel" destination="uBx-2n-T0y" id="dWa-s4-fS7"/>
+                        <outlet property="paceLabel" destination="0E8-Hf-tga" id="Qy1-wu-7Br"/>
+                        <outlet property="stepLabel" destination="RiU-HH-mmQ" id="Wr4-lb-CcO"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-880" y="976"/>
+        </scene>
+        <!--LocationController-->
+        <scene sceneID="T55-bn-lhX">
+            <objects>
+                <controller identifier="LocationController" id="sdN-Cv-Mzl" customClass="LocationController" customModule="LifeStoneWatch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="mu8-VJ-Ku2">
+                            <items>
+                                <label alignment="left" text="Latitude" id="4tR-El-OrC">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="irq-z3-PkW"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="BuA-iW-Lk7">
+                            <items>
+                                <label alignment="left" text="Longtitude" id="qVb-l8-z4I">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="Bj3-4C-Qrp"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="UH6-xm-nD6">
+                            <items>
+                                <label alignment="left" text="Altitude" id="NkD-YX-BL9">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="WeN-Y6-ABQ"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="ZAD-9R-tqG">
+                            <items>
+                                <label alignment="left" text="Floor" id="qRE-yg-iuz">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="8hY-gA-JLA"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="VYT-Tr-dCX">
+                            <items>
+                                <label alignment="left" text="Speed" id="5wS-BX-hle">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="bUz-T4-Hcq"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="ZR5-Vx-ba2">
+                            <items>
+                                <label alignment="left" text="Course" id="Rar-QK-INT">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="oSe-BP-VVi"/>
+                            </items>
+                        </group>
+                        <group width="134" alignment="left" id="7e8-UB-bMV">
+                            <items>
+                                <label height="18" alignment="left" text="HorAcc" id="toW-Bo-Ljy">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="E6S-iK-BgR"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="TgL-wz-gxj">
+                            <items>
+                                <label alignment="left" text="VerAcc" id="brl-TQ-q7A">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="icq-zH-iG0"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="DPu-24-Mwv">
+                            <items>
+                                <label alignment="left" text="Time" id="yAb-0L-0iM">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                                <label alignment="right" text="Value" textAlignment="right" id="ieX-Tz-wl8"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="HorAccLabel" destination="E6S-iK-BgR" id="5AC-A1-a4S"/>
+                        <outlet property="VerAccLabel" destination="icq-zH-iG0" id="I3y-BS-SEY"/>
+                        <outlet property="altitudeLabel" destination="WeN-Y6-ABQ" id="XlU-6v-ML7"/>
+                        <outlet property="courseLabel" destination="oSe-BP-VVi" id="Cnp-nX-Mnd"/>
+                        <outlet property="floorLabel" destination="8hY-gA-JLA" id="AqR-A8-i1K"/>
+                        <outlet property="latitudeLabel" destination="irq-z3-PkW" id="rkd-jt-k80"/>
+                        <outlet property="longitudeLabel" destination="Bj3-4C-Qrp" id="fYH-sf-PCk"/>
+                        <outlet property="speedLabel" destination="bUz-T4-Hcq" id="eSU-R7-ZwO"/>
+                        <outlet property="timeLabel" destination="ieX-Tz-wl8" id="6MV-Nh-Zqi"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-656" y="1005"/>
+        </scene>
+        <!--ItemListController-->
+        <scene sceneID="Uua-Te-nuB">
+            <objects>
+                <controller identifier="ItemListController" id="nBt-bb-5He" customClass="ItemListController" customModule="LifeStoneWatch" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="d3x-0o-DOH">
+                            <items>
+                                <tableRow identifier="ItemRowController" id="3dj-QJ-oMD" customClass="ItemRowController" customModule="LifeStoneWatch_Extension">
+                                    <group key="rootItem" width="1" height="45" alignment="left" id="D8c-SZ-YQ2">
+                                        <items>
+                                            <imageView width="25" height="25" alignment="left" verticalAlignment="center" image="item_type_0" id="6hG-rM-oOL"/>
+                                            <group width="0.84999999999999998" height="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="0.0" id="Qc0-nZ-DgJ">
+                                                <items>
+                                                    <label width="1" alignment="left" verticalAlignment="center" text="Title" numberOfLines="3" id="87O-an-yDT">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                                <edgeInsets key="margins" left="3" right="0.0" top="5" bottom="5"/>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="image" destination="6hG-rM-oOL" id="XgR-SI-Pzg"/>
+                                        <outlet property="titleLabel" destination="87O-an-yDT" id="bqs-9N-9eA"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="d3x-0o-DOH" id="lfr-PL-loN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-880" y="514"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" width="50" height="50"/>
+        <image name="item_type_0" width="50" height="50"/>
+    </resources>
+</document>
